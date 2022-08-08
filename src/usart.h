@@ -10,7 +10,7 @@
 #include <util/delay.h>
 
 #ifndef BAUD
-#define BAUD 115200
+#define BAUD 38400 // 38400 works, 115200 gives baudrate too high warning
 
 #endif
 

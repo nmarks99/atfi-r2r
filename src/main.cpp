@@ -1,14 +1,31 @@
-#include<Arduino.h>
+#include <Arduino.h>
+#include <HX711.h>
+#include <stdio.h>
 #include "usart.h"
 
-void setup() {
-  usart_init();
+#define DOUT 2
+#define SCK 3
+
+HX711 loadcell;
+
+void setup() { 
+
+    Serial.begin(38400);
+
+    loadcell.begin(DOUT,SCK);
+    
+    loadcell.set_scale(3910);
+    loadcell.tare();
 }
 
+
+
+
 void loop() {
-  delay(1000);
-  char m[50];
-  int years = 22;
-  sprintf(m,"Hello I am %d years old",years);
-  usart_println(m);
+
+    Serial.println(loadcell.get_units(3));
+    delay(20);
+
 }
+
+
