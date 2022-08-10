@@ -11,21 +11,16 @@ HX711 loadcell;
 void setup() { 
 
     Serial.begin(38400);
-
     loadcell.begin(DOUT,SCK);
-    
     loadcell.set_scale(3910);
     loadcell.tare();
+
+
 }
 
 
-
-
 void loop() {
-
-    Serial.println(loadcell.get_units(3));
-    delay(20);
-
+    Serial.println(loadcell.get_units());
 }
 
 
