@@ -52,6 +52,8 @@ void setup() {
 
 }
 
+unsigned const long REFRESH_TIME_HZ = 10;
+unsigned const long LOOP_DELAY_MS = (1/REFRESH_TIME_HZ)*1000;
 
 void loop() {
   static unsigned long timer = millis();
