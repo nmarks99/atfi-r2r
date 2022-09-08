@@ -19,13 +19,6 @@
 #define D3 4
 #define D4 7
 
-/* SevSeg Counter Example
- 
- Copyright 2020 Dean Reading
- 
- This example demonstrates a very simple use of the SevSeg library with a 4
- digit display. It displays a counter that counts up, showing deci-seconds.
- */
 
 #include <Arduino.h>
 #include "SevSeg.h"
@@ -62,7 +55,8 @@ void loop() {
   if (millis() - timer >= 100) {
     float x = loadcell.get_units();
     timer += 100;
-    sevseg.setNumberF(x, 1);
+    sevseg.setNumber(x,0); // integer precision, won't show decimal (max's out at 2025g)
+    // sevseg.setNumberF(x,1); // precision to 1 decimal place (overflow at 999.9g)
   }
 
   sevseg.refreshDisplay(); // Must run repeatedly
