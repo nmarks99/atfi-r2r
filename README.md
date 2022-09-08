@@ -12,3 +12,11 @@ by cloning the repo with git by running the following:
 ```
 git clone https://github.com/nmarks99/atfi-r2r
 ```
+
+Flash the code as you would with any other PlatformIO project. If you are 
+using the PlatformIO extension for VScode, click the upload button at the 
+bottom left of the editor.
+To do this from the command line, ensure the pio executable is on your path and run
+```
+pio run --target upload 
+```
